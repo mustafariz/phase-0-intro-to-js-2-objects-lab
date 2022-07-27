@@ -11,19 +11,20 @@ function updateEmployeeWithKeyAndValue(employee,key,value){
 return {...employee,...{[key]:value}};
 }
 
-  function deleteFromEmployeeByKey(employee, key){
-  delete employee[key];
+    function destructivelyDeleteFromEmployeeByKey(employee, key){
+    delete employee[key];
     return employee;
 
+    }
+
+  function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value){
+    employee[key]= value;
+    return employee;
   }
 
-  function destructivelyDeleteFromEmployeeByKey(employee, key){
-  delete employee[key];
-  return employee;
-
-  }
-
- function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value){
-  employee[key]= value;
-  return employee;
- }
+    function deleteFromEmployeeByKey(employee, key){
+        let object ={...employee};
+      delete object[key];
+      return object;
+    }
+  
